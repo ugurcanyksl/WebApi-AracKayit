@@ -13,7 +13,7 @@ namespace Client.Controllers
     {
         CarDBEntities db = new CarDBEntities();
 
-        //listeleme işlemi
+        //listeleme işlemi.
         [HttpGet]
         public IHttpActionResult Listele()
         {
@@ -77,6 +77,7 @@ namespace Client.Controllers
             }
         }
 
+        //güncelleme 
         public HttpResponseMessage PutCar(int id, Car car)
         {
             var updated = db.Cars.Find(id);
