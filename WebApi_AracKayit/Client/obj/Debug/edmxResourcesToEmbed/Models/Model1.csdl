@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Marka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Yakit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Kasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VitesTip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Renk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModelYil" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="CarDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cars" EntityType="Self.Car" />
+  </EntityContainer>
+</Schema>

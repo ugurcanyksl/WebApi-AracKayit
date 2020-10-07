@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Araç Kayıt Otomasyonu</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-10">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>Kayıtlı Araç Listesi</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="list-group" id="cars">
+                                    <!--<li class="list-group-item">Hüseyin Güngören</li>
+                                    <li class="list-group-item">Uğur Yüksel</li>
+                                    <li class="list-group-item">Hicran Gümüşbaş</li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function KayitlariGetir() {
+            //alert(1);
+            var ul = $("#cars")
+            //Ajax
+            $.ajax({
+                method: "Get",
+                url: 'https://localhost:44369/api/car'
+            }).done(function (response) {
+                console.log(response);
+
+                for (var i = 0; i < response.length; i++) {
+                    var car = response[i];
+                    var li = $("<li class='list-group-item'>" + car.Marka + "   " + car.Model + "   " + car.Yakıt + "   " + car.Kasa + "   " + car.Renk + "   </li>")
+                    ul.append(li);
+                }
+            })
+        }
+        $(function () {
+            KayitlariGetir();
+        })
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body >
+</html >
